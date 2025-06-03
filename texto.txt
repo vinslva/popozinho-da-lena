@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Popô na telinha?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #fff0f6;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff1493;
+    }
+    #buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    #sim {
+      background-color: #32cd32;
+      color: white;
+    }
+    #nao {
+      background-color: #ff4d4d;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Popô na telinha hoje, no? 🥺👉👈</h1>
+
+  <div id="buttons">
+    <button id="sim" onclick="respostaSim()">Sim 💖</button>
+    <button id="nao" onmouseover="moverNao()">Não 😡</button>
+  </div>
+
+  <script>
+    function respostaSim() {
+      alert("Obaaaaa! 😍 Já tô ligando a telinha 🎬💘");
+    }
+
+    function moverNao() {
+      const nao = document.getElementById('nao');
+      const container = document.getElementById('buttons');
+      const maxX = container.clientWidth - nao.offsetWidth;
+      const maxY = container.clientHeight - nao.offsetHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      nao.style.left = `${randomX}px`;
+      nao.style.top = `${randomY}px`;
+    }
+  </script>
+
+</body>
+</html>
